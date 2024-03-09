@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.0 <0.9.0;
+pragma solidity ^0.8.0;
 
-contract Election {
+contract Polls {
     enum State {
         NotStarted,
         InProgress,
