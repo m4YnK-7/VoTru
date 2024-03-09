@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <script src="{{ url_for('static', filename='script/index.js') }}"></script>
 </head>
 
 <body style="background-color: #000 ;">
@@ -20,18 +21,19 @@
     <div class="admin_page">
         <div class="left_div">
             <div class="start_timer">
-                <button id="start" onclick="func2()">Start Timer    </button>
+                <button id="start" onclick="startTimer()">Start Timer</button>
+                <div id="timer"></div>
             </div>
         </div>
         <div class="right_div">
             <div class="add_candidate">
                 <input type="text" value="" placeholder="Candidate name:" class="input_text"></input>
             </div>
-            <button id="submit_candidate" onclick="func()">Add Candidate</button>
+            <button id="submit_candidate" onclick="addCandidate()">Add Candidate</button>
         </div>
 
     </div>
     
-    
+    <script src="script.js"></script>
 </body>
 </html>
