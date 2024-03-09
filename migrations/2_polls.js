@@ -1,5 +1,5 @@
-var contract = artifacts.require("Polls");
+var Polls = artifacts.require("Polls");
 
 module.exports = function(deployer) {
-  deployer.deploy(contract);
+  deployer.deploy(Polls);
 };
