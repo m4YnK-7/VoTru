@@ -28,7 +28,6 @@ contract Polls {
     mapping(address => bool) isVoter;
 
     uint256 public candidatesCount = 0;
-
     uint256 public votersCount = 0;
 
     constructor() {
