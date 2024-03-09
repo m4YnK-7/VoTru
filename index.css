@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    padding: 2px;
+}
+
+.header{
+    width: 100dvw;
+    height: 10dvh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #000;
+}
+
+.admin_text{
+    padding-right: 44dvw;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.admin_page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-height:90dvh ;
+}
+
+.start_timer{
+
+}
