@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/admin.css') }}">
+    
     <style>
         /* Style for the input */
         .input-field {
@@ -16,6 +17,9 @@
             box-sizing: border-box; /* Ensure padding and border are included in width */
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script src="{{ url_for('static', filename='script/admin_w3.js') }}" type="module"></script>
+    
 </head>
 
 <body style="background-image:  url({{ url_for('static',filename='img/bgimg.jpg') }});" >
@@ -33,48 +37,19 @@
 
     <div class="admin_page">
         <div class="left_div">
-            
-            
-        </div>
-       
-    <div class="right_div">
-
-        <div class="right-box">
-            <div class="add_candidate" style="padding: 0; ">
-                <div class="input-container">
-                    <input type="text" placeholder="Candidate name" class="input_text">
-                </div>
-                
-                <!-- Input moved inside right-box -->
-            <input type="button" value="Add candidate" id="custom-button">
-        </div>
-    </div>
-        <div id="countdown">
-            <div class="left-box">
-            <a class="btn">
-                <span> Start timer. </span>
-            </a>
-            <h2>Countdown Timer</h2>
-            <div id="timer">
-              
-              <div>
-                <span id="hours">24</span>
-                <span>Hours</span>
-              </div>
-              <div>
-                <span id="minutes">0</span>
-                <span>Minutes</span>
-              </div>
-              <div>
-                <span id="seconds">0</span>
-                <span>Seconds</span>
-              </div>
+            <div class="start_timer">
+                <button id="start" onclick="startTimer()">Start Timer</button>
+                <div id="timer"></div>
             </div>
-          </div>
+        </div>
+        <div class="right_div">
+            <div class="add_candidate">
+                <input type="text" value="" placeholder="Candidate name:" class="input_text"></input>
+            </div>
+            <button id="submit_candidate" onclick="addCandidate()">Add Candidate</button>
         </div>
     </div>
     
-    
-    <script src="{{ url_for('static', filename='script/admin.js') }}"></script>
+    <script src="script.js"></script>
 </body>
 </html>
