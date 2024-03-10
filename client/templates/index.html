@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> VoTru </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    
 </head>
 <body style= "background-image:  url({{ url_for('static',filename='img/bgimg.jpg') }});">
     <div class="layout">
-        <div class="logo">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+        <div class="glass">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+            <div class="heading">
+                <h1>VoTru</h1>
+            </div>
+            <div class="desc">
+                <h2>Blockchain Based Voting System</h2>
+            </div>
         </div>
-        <div class="heading">
-            <h1>VoTru</h1>
-        </div>
-        <div class="desc">
-            <h2>Blockchain Based Voting System</h2>
-        </div>
+     
 
         <div id="layers">
             <div id="more">

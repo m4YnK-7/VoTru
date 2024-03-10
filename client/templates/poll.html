@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter's Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/poll.css') }}">
+</head>
+<body  style= "background-image:  url({{ url_for('static',filename='img/bgimg.jpg') }});">
+    <div class="layout">
+        <div class="nav">
+            <div class="name"><p>VoTru </p> </div>
+        </div>
+        <div class="voter_box">
+            <div class="text">Vote for your Candidate</div>
+            <div class="candidate_list">
+    
+            </div>
+            <div class="vote">
+                <button id="vote_button" onclick="func()">Vote</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
