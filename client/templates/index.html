@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> VoTru </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
     <body style= "background-image:  url({{ url_for('static',filename='img/bgimg.jpg') }});">
     <div class="layout">
@@ -17,23 +17,35 @@
         <div class="desc">
             <h2>Blockchain Based Voting System</h2>
         </div>
-        <div class="more">
-            <div class="about">
-                Elections are crucial events in a true democracy. But today, even the most democratic countries have problems with their electoral processes- hacking and rigging of electronic voting machines, electoral fraud, and violence at the polling stations. Here, we are trying to give the best possible solution: a decentralized polling system. VoTru serves as a comprehensive platform for both political representatives and voters alike. Individuals can register as representatives of political parties, enabling them to participate actively in the democratic process.
-            </div>
-            <div class="buttons">
-                <div class="login">
-                    <button id="login_button" onclick="func()">Enter the booth!</button>
+
+        <div id="layers">
+            <div id="more">
+                <div class="about">
+                    Elections are crucial events in a true democracy. But today, even the most democratic countries have problems with their electoral processes- hacking and rigging of electronic voting machines, electoral fraud, and violence at the polling stations. Here, we are trying to give the best possible solution: a decentralized polling system. VoTru serves as a comprehensive platform for both political representatives and voters alike. Individuals can register as representatives of political parties, enabling them to participate actively in the democratic process.
                 </div>
-                <div class="signup">
-                    <button id="register_button" onclick="func2()">Register</button>
+                <div class="buttons">
+                    <div class="login">
+                        <button id="login_button" onclick="func()">Enter the booth!</button>
+                    </div>
+                    <div class="signup">
+                        <button id="register_button" onclick="changeContent()">Register</button>
+                    </div>
+                    </div>
                 </div>
+
+                <div id="register">
+                    <div id ="admin_register" >
+                        <button style="padding: 8px 20px;" id="admin_register_button" onclick="admin()"><p>Admin Register</p></button>
+                    </div>
+                    <div id="voter_register">
+                        <button id="voter_register_button" onclick="func()">Voter Register</button>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-    </div>
+        </div>    
+    </div>   
     
+    <script src="{{ url_for('static', filename='script/script.js') }}"></script>
     
+    </script>
 </body>
 </html>
