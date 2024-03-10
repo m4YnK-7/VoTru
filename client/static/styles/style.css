@@ -32,10 +32,17 @@ img{
 
 #layers{
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    flex-direction: row;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
-.more{
+.hidden {
+    transform: translateX(-100%);
+  }
+
+#more{
     display: flex;
     flex-direction: row;
     width: 100dvw;
@@ -43,12 +50,25 @@ img{
     justify-content: space-around;
     /* margin-left: 7%; */
     margin-top: 6%;
-    
+    transition: transform 0.5s ease-in-out;
 }
+
+#register{
+    position: absolute;
+    opacity: 0; /* Start with opacity 0 to make it invisible */
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2%;
+}
+
 .about{
     text-align: justify;
     width: 37%;  
 }
+
 
 .buttons{
     display: flex;
