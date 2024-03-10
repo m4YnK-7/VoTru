@@ -23,8 +23,4 @@ function updateTimer() {
     }
 }
 
-function addCandidate() {
-    if (!electionStarted){
-        console.log("Candidate added");
-    }     
-}
+

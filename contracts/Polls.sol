@@ -1,118 +1,44 @@
-// SPDX-License-Identifier: MIT
+    // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract Polls {
-    enum State {
-        NotStarted,
-        InProgress,
-        Ended
-    }
-
     struct Candidate {
-        uint256 id;
+        uint id;
         string name;
-        uint256 voteCount;
+        uint voteCount;
     }
 
-    address public owner;
-    State public electionState;
-
-    struct Voter {
-        uint256 id;
-        string name;
-    }
-
-    mapping(uint256 => Candidate) candidates;
-    mapping(address => bool) voted;
-
+    mapping (uint => Candidate) public candidates;
+    mapping (address => bool) public admin;
     mapping(address => bool) isVoter;
-
-    uint256 public candidatesCount = 0;
+    mapping(address => bool) voted;
+    
+    uint public countCandidates;
     uint256 public votersCount = 0;
 
-    constructor() {
-        owner = msg.sender;
-        electionState = State.NotStarted;
-        addCandidate("Candidate 1");
-        addCandidate("Candidate 2");
+    function addCandidate(string memory name) public  returns(uint) {
+                countCandidates ++;
+                candidates[countCandidates] = Candidate(countCandidates, name, 0);
+                return countCandidates;
     }
 
-    event Voted(uint256 indexed _candidateId);
-
-    function startElection() public {
-        require(msg.sender == owner);
-        require(electionState == State.NotStarted);
-        electionState = State.InProgress;
-    }
-
-    function endElection() public {
-        require(msg.sender == owner);
-        require(electionState == State.InProgress);
-        electionState = State.Ended;
-    }
-
-    function addCandidate(string memory _name) public {
-        require(owner == msg.sender, "Only owner can add candidates");
-        require(
-            electionState == State.NotStarted,
-            "Election has already started"
-        );
-
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
-        candidatesCount++;
-    }
-
-    function addVoter(address _voter) public {
-        require(owner == msg.sender, "Only owner can add voter");
-        require(!isVoter[_voter], "Voter already added");
-        require(
-            electionState == State.NotStarted,
-            "Voter can't be added after election started"
-        );
-
-        isVoter[_voter] = true;
-    }
-
-    function getRole(address _current) public view returns (uint256) {
-        if (owner == _current) {
-            return 1;
-        } else if (isVoter[_current]) {
-            return 2;
-        } else {
-            return 3;
-        }
-    }
-
-    function vote(uint256 _candidateId) public {
-        require(
-            electionState == State.InProgress,
-            "Election is not in progress"
-        );
-        require(isVoter[msg.sender], "Non authorised user cannot vote");
+    function vote(uint candidateID) public {
+        require(candidateID > 0 && candidateID <= countCandidates);
+    
+        require(isVoter[msg.sender], "Non-registered as voter");
         require(!voted[msg.sender], "You have already voted");
-        require(
-            _candidateId >= 0 && _candidateId < candidatesCount,
-            "Invalid candidate ID"
-        );
-
-        candidates[_candidateId].voteCount++;
+        
         voted[msg.sender] = true;
-
-        emit Voted(_candidateId);
+        candidates[candidateID].voteCount ++;  
     }
 
-    function getCandidateDetails(uint256 _candidateId)
-        public
-        view
-        returns (string memory, uint256)
-    {
-        require(
-            _candidateId >= 0 && _candidateId < candidatesCount,
-            "Invalid candidate ID"
-        );
-        return (
-            candidates[_candidateId].name,
-            candidates[_candidateId].voteCount
-        );
+    function checkVote() public view returns(bool){
+        return voters[msg.sender];
     }
+        
+    function getCountCandidates() public view returns(uint) {
+        return countCandidates;
+    }
+
 }
+

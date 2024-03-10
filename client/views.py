@@ -19,3 +19,8 @@ def ats():
 def reg():
     return render_template("reg.html")
 
+@views.route('build/contracts/Polls.json')
+def serve_polls_json():
+    
+    json_path = '../build/contracts/Polls.json'
+    return send_file(json_path, mimetype='application/json')
