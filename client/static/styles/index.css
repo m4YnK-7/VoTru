@@ -30,10 +30,15 @@ img{
     margin: 0px;
 }
 
+#layers{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
 .more{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100dvw;
     align-self: flex-start;
     justify-content: space-around;
     /* margin-left: 7%; */
@@ -79,7 +84,7 @@ button {
     letter-spacing: 1.5px;
     font-family: sans-serif;
     }
-    button::before {
+button::before {
     position: absolute;
     content: "";
     top: 0;
@@ -89,14 +94,15 @@ button {
     background: #3348aa;
     z-index: -1;
     transition: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    }
-    button:hover::before {
+}
+button:hover::before {
     width: 100%;
     left: 0;
     right: unset;
-    }
-    button:hover {
+}
+button:hover {
     box-shadow: 0 0 #9ecbff, 0 0 #151515;
     color: white;
-    }
-    
+}
+
+
