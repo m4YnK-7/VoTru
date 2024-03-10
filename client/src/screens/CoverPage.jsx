@@ -30,7 +30,7 @@ export default function CoverPage() {
         alt="increase priority"
       />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-          VoTrue
+        VoTru
       </Typography>
       <Typography
         color="inherit"
@@ -38,7 +38,7 @@ export default function CoverPage() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        True Vote using blockchain based polling system built on the Ethereum blockchain.
+        True Vote, Blockchain based polling system built on the Ethereum blockchain.
       </Typography>
       <Button
         color="secondary"
