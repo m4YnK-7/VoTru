@@ -1,4 +1,4 @@
-# VoTru: Blockchain based polling system\
+# VoTru: Blockchain based polling system
 Submission to Women Techies Hackathon, GDSC
 ## Tech Stack:- 
 - Solidity
