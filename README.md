@@ -3,7 +3,7 @@ Submission to Women Techies Hackathon, GDSC
 ## Tech Stack:- 
 - Solidity
 - Trufle, Gnache
-- Express.js
+- React
 
 ## Contributors 
 - [Nishantak Panigrahi](https://github.com/nishantak)
